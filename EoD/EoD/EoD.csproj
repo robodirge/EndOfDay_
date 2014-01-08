@@ -63,9 +63,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\MainWindow.cs" />
     <Compile Include="Resources\Program.cs" />
+    <Compile Include="Resources\MissingInfoDialog.cs" />
+    <Compile Include="gtk-gui\EoD.MissingInfoDialog.cs" />
+    <Compile Include="Resources\AcceptNameDialog.cs" />
+    <Compile Include="gtk-gui\EoD.AcceptNameDialog.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CPtxt.txt" />
   </ItemGroup>
 </Project>
