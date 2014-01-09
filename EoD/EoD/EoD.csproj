@@ -67,6 +67,7 @@
     <Compile Include="gtk-gui\EoD.MissingInfoDialog.cs" />
     <Compile Include="Resources\AcceptNameDialog.cs" />
     <Compile Include="gtk-gui\EoD.AcceptNameDialog.cs" />
+    <Compile Include="Resources\Level1Content.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -1,13 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="EoD\Resources\MainWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="EoD\Resources\Level1Content.cs">
     <Files>
-      <File FileName="EoD\Resources\MainWindow.cs" Line="40" Column="20" />
-      <File FileName="EoD\Resources\Program.cs" Line="1" Column="1" />
+      <File FileName="EoD\Resources\MainWindow.cs" Line="56" Column="1" />
+      <File FileName="EoD\Resources\Level1Content.cs" Line="81" Column="1" />
+      <File FileName="c:\Users\Ben\Documents\GitHub\EndOfDay_\EoD\EoD\Resources\Program.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Ben\Documents\GitHub\EndOfDay_\EoD\EoD\Resources\MainWindow.cs" line="56" column="1" />
+      <Breakpoint file="C:\Users\Ben\Documents\GitHub\EndOfDay_\EoD\EoD\Resources\Level1Content.cs" line="81" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

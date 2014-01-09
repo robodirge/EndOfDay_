@@ -1186,15 +1186,12 @@ public partial class MainWindow
 		this.MainHboxSubContainerM5H2.Hide ();
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
+		this.radiobutton2.Toggled += new global::System.EventHandler (this.OnRadiobutton2Toggled);
+		this.radiobutton4.Toggled += new global::System.EventHandler (this.OnRadiobutton4Toggled);
 		this.radiobutton6.Toggled += new global::System.EventHandler (this.OnRadiobutton6Toggled);
 		this.radiobutton8.Toggled += new global::System.EventHandler (this.OnRadiobutton8Toggled);
 		this.radiobutton10.Toggled += new global::System.EventHandler (this.OnRadiobutton10Toggled);
-		this.button1.Clicked += new global::System.EventHandler (this.PrimAdd);
-		this.button2.Clicked += new global::System.EventHandler (this.PrimAdd);
-		this.button3.Clicked += new global::System.EventHandler (this.PrimAdd);
-		this.button4.Clicked += new global::System.EventHandler (this.PrimAdd);
-		this.button5.Clicked += new global::System.EventHandler (this.PrimAdd);
-		this.button6.Clicked += new global::System.EventHandler (this.PrimAdd);
+		this.button1.Clicked += new global::System.EventHandler (this.OnButton1Clicked);
 		this.M5H2MainCheck1.Toggled += new global::System.EventHandler (this.OnM5H2MainCheck1Toggled);
 		this.M5H2MainCheck2.Toggled += new global::System.EventHandler (this.OnM5H2MainCheck2Toggled);
 		this.MainButtonControls1.Clicked += new global::System.EventHandler (this.OnMainButtonControls1Clicked);

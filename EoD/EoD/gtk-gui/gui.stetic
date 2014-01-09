@@ -79,11 +79,11 @@
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Label" translatable="yes">radiobutton2</property>
-                        <property name="Active">True</property>
                         <property name="DrawIndicator">True</property>
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
                         <property name="Group">group1</property>
+                        <signal name="Toggled" handler="OnRadiobutton2Toggled" />
                       </widget>
                       <packing>
                         <property name="Position">0</property>
@@ -268,11 +268,11 @@
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Label" translatable="yes">radiobutton3</property>
-                        <property name="Active">True</property>
                         <property name="DrawIndicator">True</property>
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
                         <property name="Group">group2</property>
+                        <signal name="Toggled" handler="OnRadiobutton4Toggled" />
                       </widget>
                       <packing>
                         <property name="Position">0</property>
@@ -457,7 +457,6 @@
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Label" translatable="yes">radiobutton3</property>
-                        <property name="Active">True</property>
                         <property name="DrawIndicator">True</property>
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
@@ -647,7 +646,6 @@
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Label" translatable="yes">radiobutton3</property>
-                        <property name="Active">True</property>
                         <property name="DrawIndicator">True</property>
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
@@ -837,7 +835,6 @@
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Label" translatable="yes">radiobutton3</property>
-                        <property name="Active">True</property>
                         <property name="DrawIndicator">True</property>
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
@@ -919,7 +916,7 @@
                         <property name="Type">TextOnly</property>
                         <property name="Label" translatable="yes">+</property>
                         <property name="UseUnderline">True</property>
-                        <signal name="Clicked" handler="PrimAdd" />
+                        <signal name="Clicked" handler="OnButton1Clicked" />
                       </widget>
                       <packing>
                         <property name="Position">2</property>
@@ -973,7 +970,6 @@
                         <property name="Type">TextOnly</property>
                         <property name="Label" translatable="yes">+</property>
                         <property name="UseUnderline">True</property>
-                        <signal name="Clicked" handler="PrimAdd" />
                       </widget>
                       <packing>
                         <property name="Position">2</property>
@@ -1027,7 +1023,6 @@
                         <property name="Type">TextOnly</property>
                         <property name="Label" translatable="yes">+</property>
                         <property name="UseUnderline">True</property>
-                        <signal name="Clicked" handler="PrimAdd" />
                       </widget>
                       <packing>
                         <property name="Position">2</property>
@@ -1081,7 +1076,6 @@
                         <property name="Type">TextOnly</property>
                         <property name="Label" translatable="yes">+</property>
                         <property name="UseUnderline">True</property>
-                        <signal name="Clicked" handler="PrimAdd" />
                       </widget>
                       <packing>
                         <property name="Position">2</property>
@@ -1135,7 +1129,6 @@
                         <property name="Type">TextOnly</property>
                         <property name="Label" translatable="yes">+</property>
                         <property name="UseUnderline">True</property>
-                        <signal name="Clicked" handler="PrimAdd" />
                       </widget>
                       <packing>
                         <property name="Position">2</property>
@@ -1189,7 +1182,6 @@
                         <property name="Type">TextOnly</property>
                         <property name="Label" translatable="yes">+</property>
                         <property name="UseUnderline">True</property>
-                        <signal name="Clicked" handler="PrimAdd" />
                       </widget>
                       <packing>
                         <property name="Position">2</property>

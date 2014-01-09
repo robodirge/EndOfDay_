@@ -9,7 +9,8 @@ namespace EoD
 		{
 			Application.Init ();
 			MainWindow win = new MainWindow ();
-			win.Show ();
+			win.main();
+			//win.Show ();
 			Application.Run ();
 		}
 	}
