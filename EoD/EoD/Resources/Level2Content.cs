@@ -6,6 +6,16 @@ using Gtk;
 public partial class MainWindow: Gtk.Window{
 
 	public void ReportSectionTwo(){
+		// Supply text for title label 
+		MainLabelTitle.Text = "Report Details";
+
+		// Supply content for Client fields
+		M1H1MainLabelHeader1.Text = "Testers initials:";
+		M1MainEntryField1.Text = "";
+
+		// Supply content for Project fields
+		M2H1MainLabelHeader1.Text = "Date:";
+		M2MainEntryField1.Text = DateTime.Now.ToString("dd/MM/yyyy");
 	}
 
 	public void Level2Toggled6 (){

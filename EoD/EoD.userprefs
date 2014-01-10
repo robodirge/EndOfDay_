@@ -3,8 +3,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="EoD\Resources\Level1Content.cs">
     <Files>
       <File FileName="EoD\Resources\MainWindow.cs" Line="105" Column="2" />
-      <File FileName="EoD\Resources\Level1Content.cs" Line="307" Column="51" />
-      <File FileName="EoD\Resources\Level2Content.cs" Line="14" Column="35" />
+      <File FileName="EoD\Resources\Level1Content.cs" Line="178" Column="2" />
+      <File FileName="EoD\Resources\Level2Content.cs" Line="18" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -7,6 +7,9 @@ public partial class MainWindow: Gtk.Window{
 
 	public string clientNameString;
 	public string projectNameString;
+	public string urlUsedString;
+	public string buildVersionString;
+	public string[] primListArray;
 
 	public int addCounter;
 

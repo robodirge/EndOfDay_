@@ -141,7 +141,6 @@ public partial class MainWindow: Gtk.Window{
 	}
 
 	protected void Level1ButtonControls1Clicked (){
-		Console.WriteLine("Next level");
 		//MainWindow myMainClass = new MainWindow();
 		bool clientNameBool = false;
 		clientNameString = IsInvalid(M1MainEntryField1.Text, ref clientNameBool, "Client name");
@@ -159,7 +158,7 @@ public partial class MainWindow: Gtk.Window{
 		//Check all 7 primary fields if text not = to ""  // I could link the '+' to the enviro chooser
 		if(radiobutton10.Active){
 			if(M5MainEntryField1.Text == ""){
-				MessageDialog PF = new MessageDialog(this, DialogFlags.Modal, MessageType.Warning, ButtonsType.Ok, ("No primary environment supplied!"));
+				MessageDialog PF = new MessageDialog(this, DialogFlags.Modal, MessageType.Warning, ButtonsType.Ok, ("First primary environment is missing!"));
 				PF.Title= "Missing input";
 				ResponseType response = (ResponseType) PF.Run();
 				if (response == ResponseType.Ok || response == ResponseType.DeleteEvent){
@@ -171,7 +170,7 @@ public partial class MainWindow: Gtk.Window{
 
 		if((clientNameBool) && (projectNameBool) && (primBool)){
 			SetLevel1Options();
-			//run Next Level!
+			ReportSectionTwo();
 		}
 
 		return;
@@ -199,7 +198,7 @@ public partial class MainWindow: Gtk.Window{
 			}
 		}
 		else if(oldstring != illegaltemp){
-			string errortemp = (sTitle + " Is Incorrect. Are you happy for this name to be used: ") + illegaltemp;
+			string errortemp = (sTitle + " Is incorrect. Are you happy for this name to be used: ") + illegaltemp;
 
 			MessageDialog SN = new MessageDialog(this, DialogFlags.Modal, MessageType.Warning, ButtonsType.YesNo, errortemp);
 			SN.WidthRequest = 600; 
@@ -304,8 +303,52 @@ public partial class MainWindow: Gtk.Window{
 			if((hbox7.Visible) && (M5MainEntryField7.Text != ""))
 				iTempCount++;
 
+			primListArray = new string[iTempCount];
 			//value is - apply to an array which is global!
+
+			for(int x =0; x < primListArray.Length; x++){
+				switch(x){
+				case 0:
+					primListArray[0] = M5MainEntryField1.Text;
+					break;
+				case 1:
+					primListArray[1] = M5MainEntryField2.Text;
+					break;
+				case 2:
+					primListArray[2] = M5MainEntryField3.Text;
+					break;
+				case 3:
+					primListArray[3] = M5MainEntryField4.Text;
+					break;
+				case 4:
+					primListArray[4] = M5MainEntryField5.Text;
+					break;
+				case 5:
+					primListArray[5] = M5MainEntryField6.Text;
+					break;
+				case 6: 
+					primListArray[6] = M5MainEntryField7.Text;
+					break;
+				}
+			}
 		}
+
+		if(radiobutton6.Active){
+			urlUsedString = M3MainTextView1.Buffer.Text;
+		}else{
+			urlUsedString = @"N/A";
+		}
+
+		if(radiobutton8.Active){
+			buildVersionString = M4MainTextView1.Buffer.Text;
+		}else{
+			buildVersionString = DateTime.Now.ToString("dd/MM/yyyy");
+		}
+
+		Console.WriteLine(clientNameString);
+		Console.WriteLine(projectNameString);
+		Console.WriteLine(urlUsedString);
+		Console.WriteLine(buildVersionString);
 
 		return;
 	}
