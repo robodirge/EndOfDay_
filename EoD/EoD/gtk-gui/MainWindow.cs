@@ -204,6 +204,7 @@ public partial class MainWindow
 		this.M1MainEntryField1.CanFocus = true;
 		this.M1MainEntryField1.Name = "M1MainEntryField1";
 		this.M1MainEntryField1.IsEditable = true;
+		this.M1MainEntryField1.MaxLength = 50;
 		this.M1MainEntryField1.ActivatesDefault = true;
 		this.M1MainEntryField1.InvisibleChar = '●';
 		this.MainVboxSubContainerM1.Add (this.M1MainEntryField1);
@@ -339,6 +340,7 @@ public partial class MainWindow
 		this.M2MainEntryField1.CanFocus = true;
 		this.M2MainEntryField1.Name = "M2MainEntryField1";
 		this.M2MainEntryField1.IsEditable = true;
+		this.M2MainEntryField1.MaxLength = 50;
 		this.M2MainEntryField1.ActivatesDefault = true;
 		this.M2MainEntryField1.InvisibleChar = '●';
 		this.MainVboxSubContainerM2.Add (this.M2MainEntryField1);
@@ -474,6 +476,7 @@ public partial class MainWindow
 		this.M3MainEntryField1.CanFocus = true;
 		this.M3MainEntryField1.Name = "M3MainEntryField1";
 		this.M3MainEntryField1.IsEditable = true;
+		this.M3MainEntryField1.MaxLength = 50;
 		this.M3MainEntryField1.ActivatesDefault = true;
 		this.M3MainEntryField1.InvisibleChar = '●';
 		this.MainVboxSubContainerM3.Add (this.M3MainEntryField1);
@@ -609,6 +612,7 @@ public partial class MainWindow
 		this.M4MainEntryField1.CanFocus = true;
 		this.M4MainEntryField1.Name = "M4MainEntryField1";
 		this.M4MainEntryField1.IsEditable = true;
+		this.M4MainEntryField1.MaxLength = 50;
 		this.M4MainEntryField1.ActivatesDefault = true;
 		this.M4MainEntryField1.InvisibleChar = '●';
 		this.MainVboxSubContainerM4.Add (this.M4MainEntryField1);
@@ -1192,6 +1196,11 @@ public partial class MainWindow
 		this.radiobutton8.Toggled += new global::System.EventHandler (this.OnRadiobutton8Toggled);
 		this.radiobutton10.Toggled += new global::System.EventHandler (this.OnRadiobutton10Toggled);
 		this.button1.Clicked += new global::System.EventHandler (this.OnButton1Clicked);
+		this.button2.Clicked += new global::System.EventHandler (this.OnButton1Clicked);
+		this.button3.Clicked += new global::System.EventHandler (this.OnButton1Clicked);
+		this.button4.Clicked += new global::System.EventHandler (this.OnButton1Clicked);
+		this.button5.Clicked += new global::System.EventHandler (this.OnButton1Clicked);
+		this.button6.Clicked += new global::System.EventHandler (this.OnButton1Clicked);
 		this.M5H2MainCheck1.Toggled += new global::System.EventHandler (this.OnM5H2MainCheck1Toggled);
 		this.M5H2MainCheck2.Toggled += new global::System.EventHandler (this.OnM5H2MainCheck2Toggled);
 		this.MainButtonControls1.Clicked += new global::System.EventHandler (this.OnMainButtonControls1Clicked);

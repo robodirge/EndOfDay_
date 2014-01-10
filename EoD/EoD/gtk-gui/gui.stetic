@@ -79,6 +79,7 @@
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Label" translatable="yes">radiobutton2</property>
+                        <property name="Active">True</property>
                         <property name="DrawIndicator">True</property>
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
@@ -124,6 +125,7 @@
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="IsEditable">True</property>
+                <property name="MaxLength">50</property>
                 <property name="ActivatesDefault">True</property>
                 <property name="InvisibleChar">●</property>
               </widget>
@@ -268,6 +270,7 @@
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Label" translatable="yes">radiobutton3</property>
+                        <property name="Active">True</property>
                         <property name="DrawIndicator">True</property>
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
@@ -313,6 +316,7 @@
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="IsEditable">True</property>
+                <property name="MaxLength">50</property>
                 <property name="ActivatesDefault">True</property>
                 <property name="InvisibleChar">●</property>
               </widget>
@@ -457,6 +461,7 @@
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Label" translatable="yes">radiobutton3</property>
+                        <property name="Active">True</property>
                         <property name="DrawIndicator">True</property>
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
@@ -502,6 +507,7 @@
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="IsEditable">True</property>
+                <property name="MaxLength">50</property>
                 <property name="ActivatesDefault">True</property>
                 <property name="InvisibleChar">●</property>
               </widget>
@@ -646,6 +652,7 @@
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Label" translatable="yes">radiobutton3</property>
+                        <property name="Active">True</property>
                         <property name="DrawIndicator">True</property>
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
@@ -691,6 +698,7 @@
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="IsEditable">True</property>
+                <property name="MaxLength">50</property>
                 <property name="ActivatesDefault">True</property>
                 <property name="InvisibleChar">●</property>
               </widget>
@@ -835,6 +843,7 @@
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Label" translatable="yes">radiobutton3</property>
+                        <property name="Active">True</property>
                         <property name="DrawIndicator">True</property>
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
@@ -970,6 +979,7 @@
                         <property name="Type">TextOnly</property>
                         <property name="Label" translatable="yes">+</property>
                         <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="OnButton1Clicked" />
                       </widget>
                       <packing>
                         <property name="Position">2</property>
@@ -1023,6 +1033,7 @@
                         <property name="Type">TextOnly</property>
                         <property name="Label" translatable="yes">+</property>
                         <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="OnButton1Clicked" />
                       </widget>
                       <packing>
                         <property name="Position">2</property>
@@ -1076,6 +1087,7 @@
                         <property name="Type">TextOnly</property>
                         <property name="Label" translatable="yes">+</property>
                         <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="OnButton1Clicked" />
                       </widget>
                       <packing>
                         <property name="Position">2</property>
@@ -1129,6 +1141,7 @@
                         <property name="Type">TextOnly</property>
                         <property name="Label" translatable="yes">+</property>
                         <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="OnButton1Clicked" />
                       </widget>
                       <packing>
                         <property name="Position">2</property>
@@ -1182,6 +1195,7 @@
                         <property name="Type">TextOnly</property>
                         <property name="Label" translatable="yes">+</property>
                         <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="OnButton1Clicked" />
                       </widget>
                       <packing>
                         <property name="Position">2</property>

@@ -16,8 +16,7 @@ public partial class MainWindow: Gtk.Window{
 	public MainWindow () : base (Gtk.WindowType.Toplevel){}
 
 	public void main(){
-		MainContent myClass1 = new MainContent();		
-		myClass1.ReportSectionOne();
+		ReportSectionOne();
 	}
 
 	//<param> Application closes </param>
@@ -26,34 +25,36 @@ public partial class MainWindow: Gtk.Window{
 		a.RetVal = true;
 	}
 
-
 	protected void OnM5H2MainCheck2Toggled (object sender, EventArgs e){
-	}
-
-	protected void OnM5H2MainCheck1Toggled (object sender, EventArgs e){
-	}
-
-	protected void OnMainButtonControls1Clicked (object sender, EventArgs e){
-	}
-
-	protected void OnButton1Clicked (object sender, EventArgs e){
-	}
-
-	protected void OnRadiobutton10Toggled (object sender, EventArgs e){
-	}
-
-	protected void OnRadiobutton8Toggled (object sender, EventArgs e){
-	}
-
-	protected void OnRadiobutton6Toggled (object sender, EventArgs e){
-
-		Console.WriteLine(programControl);
-
 		switch (programControl){
 		case 1:
-			MainContent myClass1 = new MainContent();	
-			//myClass1.Level1Toggled();
-			myClass1.tempFunc();
+			Level1Check2Toggled();
+			break;
+		case 2:
+			Console.WriteLine("asd");
+			break;
+		default:
+			break;
+		}
+	}//
+
+	protected void OnM5H2MainCheck1Toggled (object sender, EventArgs e){
+		switch (programControl){
+		case 1:
+			Level1Check1Toggled();
+			break;
+		case 2:
+			Console.WriteLine("asd");
+			break;
+		default:
+			break;
+		}
+	}//
+
+	protected void OnMainButtonControls1Clicked (object sender, EventArgs e){
+		switch (programControl){
+		case 1:
+			Level1ButtonControls1Clicked();
 			break;
 		case 2:
 			Console.WriteLine("asd");
@@ -63,7 +64,59 @@ public partial class MainWindow: Gtk.Window{
 		}
 	}
 
-	//ATM Blank
+	protected void OnButton1Clicked (object sender, EventArgs e){
+		switch (programControl){
+		case 1:
+			PrimAdd();
+			break;
+		case 2:
+			Console.WriteLine("asd");
+			break;
+		default:
+			break;
+		}
+	}
+
+	protected void OnRadiobutton10Toggled (object sender, EventArgs e){
+		switch (programControl){
+		case 1:
+			Level1Toggled10();
+			break;
+		case 2:
+			Console.WriteLine("asd");
+			break;
+		default:
+			break;
+		}
+	}
+
+	protected void OnRadiobutton8Toggled (object sender, EventArgs e){
+		switch (programControl){
+		case 1:
+			Level1Toggled8();
+			break;
+		case 2:
+			Console.WriteLine("asd");
+			break;
+		default:
+			break;
+		}
+	}
+
+	protected void OnRadiobutton6Toggled (object sender, EventArgs e){
+		switch (programControl){
+		case 1:
+			Level1Toggled6();
+			break;
+		case 2:
+			Console.WriteLine("asd");
+			break;
+		default:
+			break;
+		}
+	}
+
+	//ATM Blank   
 	protected void OnRadiobutton4Toggled (object sender, EventArgs e){
 	}
 
