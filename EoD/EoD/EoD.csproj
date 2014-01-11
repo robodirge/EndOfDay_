@@ -69,6 +69,8 @@
     <Compile Include="gtk-gui\EoD.AcceptNameDialog.cs" />
     <Compile Include="Resources\Level1Content.cs" />
     <Compile Include="Resources\Level2Content.cs" />
+    <Compile Include="Resources\Level3Content.cs" />
+    <Compile Include="Resources\Level4Content.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

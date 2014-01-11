@@ -14,8 +14,12 @@ public partial class MainWindow: Gtk.Window{
 		M1MainEntryField1.Text = "";
 
 		// Supply content for Project fields
-		M2H1MainLabelHeader1.Text = "Date:";
-		M2MainEntryField1.Text = DateTime.Now.ToString("dd/MM/yyyy");
+		M2H1MainLabelHeader1.Text = "Date tested:";
+		M2MainEntryField1.Text = DateTime.Now.ToString("dd/MM/yyyy"); /// Could make a calender
+
+		MainVboxSubContainerM3.Hide();
+		MainVboxSubContainerM4.Hide();
+		MainVboxSubContainerM5.Hide();
 	}
 
 	public void Level2Toggled6 (){
@@ -28,6 +32,22 @@ public partial class MainWindow: Gtk.Window{
 	}
 
 	protected void Level2ButtonControls1Clicked (){
+	}
+
+	protected void Level2Button (){
+		if(M1MainEntryField1.Text == ""){
+			MessageDialog PF = new MessageDialog(this, DialogFlags.Modal, MessageType.Warning, ButtonsType.Ok, ("Missing initials!"));
+			PF.Title= "Please provide initials.";
+			ResponseType response = (ResponseType) PF.Run();
+			if (response == ResponseType.Ok || response == ResponseType.DeleteEvent){
+				PF.Destroy();
+			}
+		}else{
+			programControl = 3;
+			ReportSectionThree();
+		}
+
+		//Console.WriteLine("here 3");
 	}
 
 	protected void Level2Check1Toggled (){

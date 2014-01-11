@@ -60,7 +60,11 @@ public partial class MainWindow: Gtk.Window{
 			Level1ButtonControls1Clicked();
 			break;
 		case 2:
-			Console.WriteLine("asd");
+			Level2Button();
+			//Console.WriteLine("asd");
+			break;
+		case 3:
+			Level3Button();
 			break;
 		default:
 			break;

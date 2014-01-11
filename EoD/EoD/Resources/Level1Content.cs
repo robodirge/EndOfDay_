@@ -6,10 +6,8 @@ using Gtk;
 public partial class MainWindow: Gtk.Window{
 
 	//<param> Fill in fields for the first section in the report - Project details </param>
-
 	public void ReportSectionOne(){
 		//myMainClass = new MainWindow(); ///////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
 		this.Build();
 
 		// Supply text for title label 
@@ -68,6 +66,9 @@ public partial class MainWindow: Gtk.Window{
 		radiobutton11.Label = "No";
 	
 		MainButtonControls1.Sensitive = false;
+
+		MainButtonControls2.Hide();
+		MainButtonControls3.Hide();
 
 		addCounter = 2;
 		programControl = 1;
@@ -170,6 +171,7 @@ public partial class MainWindow: Gtk.Window{
 
 		if((clientNameBool) && (projectNameBool) && (primBool)){
 			SetLevel1Options();
+			programControl = 2; 
 			ReportSectionTwo();
 		}
 
