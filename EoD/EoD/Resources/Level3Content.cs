@@ -59,25 +59,52 @@ public partial class MainWindow: Gtk.Window{
 			object visible = true;
 
 			Word._Document doc1 = app.Documents.Add(template, newTemplate, documentType, visible);
-			doc1.Words.First.InsertBefore(M1MainTextView1.Buffer.Text);
+
+			Console.WriteLine(M2MainTextView1.Buffer.Text);
+
+			doc1.Words.First.InsertBefore(M2MainTextView1.Buffer.Text);
+
+			doc1.Content.LanguageID = WdLanguageID.wdEnglishUK;
+
 			Word.ProofreadingErrors spellErrorsColl = doc1.SpellingErrors;
 			errors = spellErrorsColl.Count;
 
+			Console.WriteLine(errors);
+
 			object optional = Missing.Value;
 
-			doc1.CheckSpelling(
-				optional, optional, optional, optional, optional, optional,
-				optional, optional, optional, optional, optional, optional);
+			//	if(errors > 0 ){
+			//	for(int x = 1; x <= spellErrorsColl.Count; x++){
+			//		Console.WriteLine(spellErrorsColl[x].Text);
+			//	}
+			//}
 
-			//ExtraLabel.Visible = true;
+			Word.SpellingSuggestions correctionSpelling;
 
-			label8.Visible = true;
+			//correctionSpelling = app.GetSpellingSuggestions(spellErrorsColl[1].Text);
+
+			if(errors > 0){
+				for(int p = 1; p <= spellErrorsColl.Count; p++){
+
+					correctionSpelling = app.GetSpellingSuggestions(spellErrorsColl[p].Text);
+
+					for(int x = 1; x <= correctionSpelling.Count; x++){
+						Console.WriteLine(correctionSpelling[x].Name);
+					} 
+				}
+			}
+			//doc1.CheckSpelling(
+			//	optional, optional, optional, optional, optional, optional,
+			//	optional, optional, optional, optional, optional, optional);
+
 			label8.Text = errors + " errors corrected ";
 			object first = 0;
 			object last = doc1.Characters.Count - 1;
-			M1MainTextView1.Buffer.Text = doc1.Range(first, last).Text;
+			M2MainTextView1.Buffer.Text = doc1.Range(first, last).Text;
 			//textBox1.Text = doc1.Range(ref first, ref last).Text;
 		}
+		app.Quit();
+
 	}
 
 	public void Level3Toggled6 (){
