@@ -1,1 +1,27 @@
-Issue Verification & Retest 
+            if (textBox1.Text.Length > 0)
+            {
+                app.Visible = false;
+
+                // Setting these variables is comparable to passing null to the function.
+                // This is necessary because the C# null cannot be passed by reference.
+                object template = Missing.Value;
+                object newTemplate = Missing.Value;
+                object documentType = Missing.Value;
+                object visible = true;
+
+                Word._Document doc1 = app.Documents.Add(ref template, ref newTemplate, ref documentType, ref visible);
+                doc1.Words.First.InsertBefore(textBox1.Text);
+                Word.ProofreadingErrors spellErrorsColl = doc1.SpellingErrors;
+                errors = spellErrorsColl.Count;
+
+                object optional = Missing.Value;
+
+                doc1.CheckSpelling(
+                    ref optional, ref optional, ref optional, ref optional, ref optional, ref optional,
+                    ref optional, ref optional, ref optional, ref optional, ref optional, ref optional);
+
+                label1.Text = errors + " errors corrected ";
+                object first = 0;
+                object last = doc1.Characters.Count - 1;
+                textBox1.Text = doc1.Range(ref first, ref last).Text;
+            }

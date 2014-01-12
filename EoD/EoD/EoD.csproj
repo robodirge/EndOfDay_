@@ -51,6 +51,18 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Mono.Posix, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
+    <Reference Include="NetOffice">
+      <HintPath>..\..\..\..\..\Downloads\NetOffice 1.6.0\NET 4.5\Assemblies\Any CPU\NetOffice.dll</HintPath>
+    </Reference>
+    <Reference Include="OfficeApi">
+      <HintPath>..\..\..\..\..\Downloads\NetOffice 1.6.0\NET 4.5\Assemblies\Any CPU\OfficeApi.dll</HintPath>
+    </Reference>
+    <Reference Include="VBIDEApi">
+      <HintPath>..\..\..\..\..\Downloads\NetOffice 1.6.0\NET 4.5\Assemblies\Any CPU\VBIDEApi.dll</HintPath>
+    </Reference>
+    <Reference Include="WordApi">
+      <HintPath>..\..\..\..\..\Downloads\NetOffice 1.6.0\NET 4.5\Assemblies\Any CPU\WordApi.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">

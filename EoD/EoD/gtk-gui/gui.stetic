@@ -7,7 +7,7 @@
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../bin/Debug/EoD.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="600 934">
+  <widget class="Gtk.Window" id="MainWindow" design-size="600 1040">
     <property name="MemberName" />
     <property name="WidthRequest">600</property>
     <property name="HeightRequest">650</property>
@@ -79,7 +79,6 @@
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Label" translatable="yes">radiobutton2</property>
-                        <property name="Active">True</property>
                         <property name="DrawIndicator">True</property>
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
@@ -270,7 +269,6 @@
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Label" translatable="yes">radiobutton3</property>
-                        <property name="Active">True</property>
                         <property name="DrawIndicator">True</property>
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
@@ -461,7 +459,6 @@
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Label" translatable="yes">radiobutton3</property>
-                        <property name="Active">True</property>
                         <property name="DrawIndicator">True</property>
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
@@ -652,7 +649,6 @@
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Label" translatable="yes">radiobutton3</property>
-                        <property name="Active">True</property>
                         <property name="DrawIndicator">True</property>
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
@@ -843,7 +839,6 @@
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Label" translatable="yes">radiobutton3</property>
-                        <property name="Active">True</property>
                         <property name="DrawIndicator">True</property>
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
@@ -1381,12 +1376,24 @@
           </packing>
         </child>
         <child>
+          <widget class="Gtk.Label" id="label8">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Some label here!</property>
+          </widget>
+          <packing>
+            <property name="Position">7</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
           <widget class="Gtk.Fixed" id="fixed4">
             <property name="MemberName" />
             <property name="HasWindow">False</property>
           </widget>
           <packing>
-            <property name="Position">7</property>
+            <property name="Position">8</property>
             <property name="AutoSize">False</property>
           </packing>
         </child>
@@ -1426,6 +1433,7 @@
                 <property name="Type">TextOnly</property>
                 <property name="Label" translatable="yes">MainButtonControls1</property>
                 <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnMainButtonControls2Clicked" after="yes" />
               </widget>
               <packing>
                 <property name="Position">2</property>
@@ -1459,7 +1467,7 @@
             </child>
           </widget>
           <packing>
-            <property name="Position">8</property>
+            <property name="Position">9</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>

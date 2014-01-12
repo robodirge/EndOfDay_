@@ -104,6 +104,7 @@ public partial class MainWindow
 	private global::Gtk.CheckButton M5H2MainCheck2;
 	private global::Gtk.CheckButton M5H2MainCheck3;
 	private global::Gtk.HSeparator hseparator7;
+	private global::Gtk.Label label8;
 	private global::Gtk.Fixed fixed4;
 	private global::Gtk.HBox MainHboxSubContainer;
 	private global::Gtk.Button MainButtonControls3;
@@ -1108,12 +1109,21 @@ public partial class MainWindow
 		w100.Expand = false;
 		w100.Fill = false;
 		// Container child MainVboxContainer.Gtk.Box+BoxChild
+		this.label8 = new global::Gtk.Label ();
+		this.label8.Name = "label8";
+		this.label8.LabelProp = global::Mono.Unix.Catalog.GetString ("Some label here!");
+		this.MainVboxContainer.Add (this.label8);
+		global::Gtk.Box.BoxChild w101 = ((global::Gtk.Box.BoxChild)(this.MainVboxContainer [this.label8]));
+		w101.Position = 7;
+		w101.Expand = false;
+		w101.Fill = false;
+		// Container child MainVboxContainer.Gtk.Box+BoxChild
 		this.fixed4 = new global::Gtk.Fixed ();
 		this.fixed4.Name = "fixed4";
 		this.fixed4.HasWindow = false;
 		this.MainVboxContainer.Add (this.fixed4);
-		global::Gtk.Box.BoxChild w101 = ((global::Gtk.Box.BoxChild)(this.MainVboxContainer [this.fixed4]));
-		w101.Position = 7;
+		global::Gtk.Box.BoxChild w102 = ((global::Gtk.Box.BoxChild)(this.MainVboxContainer [this.fixed4]));
+		w102.Position = 8;
 		// Container child MainVboxContainer.Gtk.Box+BoxChild
 		this.MainHboxSubContainer = new global::Gtk.HBox ();
 		this.MainHboxSubContainer.Name = "MainHboxSubContainer";
@@ -1126,15 +1136,15 @@ public partial class MainWindow
 		this.MainButtonControls3.UseUnderline = true;
 		this.MainButtonControls3.Label = global::Mono.Unix.Catalog.GetString ("MainButtonControls1");
 		this.MainHboxSubContainer.Add (this.MainButtonControls3);
-		global::Gtk.Box.BoxChild w102 = ((global::Gtk.Box.BoxChild)(this.MainHboxSubContainer [this.MainButtonControls3]));
-		w102.Position = 0;
+		global::Gtk.Box.BoxChild w103 = ((global::Gtk.Box.BoxChild)(this.MainHboxSubContainer [this.MainButtonControls3]));
+		w103.Position = 0;
 		// Container child MainHboxSubContainer.Gtk.Box+BoxChild
 		this.Empty1 = new global::Gtk.Fixed ();
 		this.Empty1.Name = "Empty1";
 		this.Empty1.HasWindow = false;
 		this.MainHboxSubContainer.Add (this.Empty1);
-		global::Gtk.Box.BoxChild w103 = ((global::Gtk.Box.BoxChild)(this.MainHboxSubContainer [this.Empty1]));
-		w103.Position = 1;
+		global::Gtk.Box.BoxChild w104 = ((global::Gtk.Box.BoxChild)(this.MainHboxSubContainer [this.Empty1]));
+		w104.Position = 1;
 		// Container child MainHboxSubContainer.Gtk.Box+BoxChild
 		this.MainButtonControls2 = new global::Gtk.Button ();
 		this.MainButtonControls2.WidthRequest = 175;
@@ -1143,15 +1153,15 @@ public partial class MainWindow
 		this.MainButtonControls2.UseUnderline = true;
 		this.MainButtonControls2.Label = global::Mono.Unix.Catalog.GetString ("MainButtonControls1");
 		this.MainHboxSubContainer.Add (this.MainButtonControls2);
-		global::Gtk.Box.BoxChild w104 = ((global::Gtk.Box.BoxChild)(this.MainHboxSubContainer [this.MainButtonControls2]));
-		w104.Position = 2;
+		global::Gtk.Box.BoxChild w105 = ((global::Gtk.Box.BoxChild)(this.MainHboxSubContainer [this.MainButtonControls2]));
+		w105.Position = 2;
 		// Container child MainHboxSubContainer.Gtk.Box+BoxChild
 		this.Empty2 = new global::Gtk.Fixed ();
 		this.Empty2.Name = "Empty2";
 		this.Empty2.HasWindow = false;
 		this.MainHboxSubContainer.Add (this.Empty2);
-		global::Gtk.Box.BoxChild w105 = ((global::Gtk.Box.BoxChild)(this.MainHboxSubContainer [this.Empty2]));
-		w105.Position = 3;
+		global::Gtk.Box.BoxChild w106 = ((global::Gtk.Box.BoxChild)(this.MainHboxSubContainer [this.Empty2]));
+		w106.Position = 3;
 		// Container child MainHboxSubContainer.Gtk.Box+BoxChild
 		this.MainButtonControls1 = new global::Gtk.Button ();
 		this.MainButtonControls1.WidthRequest = 175;
@@ -1160,19 +1170,19 @@ public partial class MainWindow
 		this.MainButtonControls1.UseUnderline = true;
 		this.MainButtonControls1.Label = global::Mono.Unix.Catalog.GetString ("Next");
 		this.MainHboxSubContainer.Add (this.MainButtonControls1);
-		global::Gtk.Box.BoxChild w106 = ((global::Gtk.Box.BoxChild)(this.MainHboxSubContainer [this.MainButtonControls1]));
-		w106.Position = 4;
+		global::Gtk.Box.BoxChild w107 = ((global::Gtk.Box.BoxChild)(this.MainHboxSubContainer [this.MainButtonControls1]));
+		w107.Position = 4;
 		this.MainVboxContainer.Add (this.MainHboxSubContainer);
-		global::Gtk.Box.BoxChild w107 = ((global::Gtk.Box.BoxChild)(this.MainVboxContainer [this.MainHboxSubContainer]));
-		w107.Position = 8;
-		w107.Expand = false;
-		w107.Fill = false;
+		global::Gtk.Box.BoxChild w108 = ((global::Gtk.Box.BoxChild)(this.MainVboxContainer [this.MainHboxSubContainer]));
+		w108.Position = 9;
+		w108.Expand = false;
+		w108.Fill = false;
 		this.Add (this.MainVboxContainer);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
 		this.DefaultWidth = 600;
-		this.DefaultHeight = 934;
+		this.DefaultHeight = 1040;
 		this.MainHboxSubContainerM1H1Sub1.Hide ();
 		this.M1MainTextView1.Hide ();
 		this.MainHboxSubContainerM1H2.Hide ();
@@ -1203,6 +1213,7 @@ public partial class MainWindow
 		this.button6.Clicked += new global::System.EventHandler (this.OnButton1Clicked);
 		this.M5H2MainCheck1.Toggled += new global::System.EventHandler (this.OnM5H2MainCheck1Toggled);
 		this.M5H2MainCheck2.Toggled += new global::System.EventHandler (this.OnM5H2MainCheck2Toggled);
+		this.MainButtonControls2.Clicked += new global::System.EventHandler (this.OnMainButtonControls2Clicked);
 		this.MainButtonControls1.Clicked += new global::System.EventHandler (this.OnMainButtonControls1Clicked);
 	}
 }

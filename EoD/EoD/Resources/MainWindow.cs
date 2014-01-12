@@ -130,6 +130,10 @@ public partial class MainWindow: Gtk.Window{
 	//ATM Blank
 	protected void OnRadiobutton2Toggled (object sender, EventArgs e){
 	}
+
+	protected void OnMainButtonControls2Clicked(object sender, EventArgs e){
+		CheckSpelling();
+	}
 }
 
 
