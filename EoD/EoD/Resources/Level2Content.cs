@@ -17,9 +17,21 @@ public partial class MainWindow: Gtk.Window{
 		M2H1MainLabelHeader1.Text = "Date tested:";
 		M2MainEntryField1.Text = DateTime.Now.ToString("dd/MM/yyyy"); /// Could make a calender
 
-		MainVboxSubContainerM3.Hide();
+		//MainVboxSubContainerM3.Hide();
+		M3H1MainLabelHeader1.Text = "Test activities:";
+		MainHboxSubContainerM3H1Sub1.Visible = false;
+		M3MainEntryField1.Visible = false;
+		M3MainTextView1.Visible = false;
+		MainHboxSubContainerM3H2.Visible = true;
+
+		M3H2MainCheck1.Label = "Scripting & Planning";
+		M3H2MainCheck2.Label = "Test Execution";
+		M3H2MainCheck3.Label = "Issue Verification & Retest";
+
 		MainVboxSubContainerM4.Hide();
 		MainVboxSubContainerM5.Hide();
+
+		MainButtonControls1.Sensitive = false;
 	}
 
 	public void Level2Toggled6 (){
@@ -46,14 +58,42 @@ public partial class MainWindow: Gtk.Window{
 			programControl = 3;
 			ReportSectionThree();
 		}
-
-		//Console.WriteLine("here 3");
 	}
 
 	protected void Level2Check1Toggled (){
+		if(M3H2MainCheck1.Active)
+			MainButtonControls1.Sensitive = true;
+		else{
+			if((M3H2MainCheck2.Active)||(M3H2MainCheck3.Active)){
+			}
+			else{
+				MainButtonControls1.Sensitive = false;
+			}
+		}
 	}
 
 	protected void Level2Check2Toggled (){
+		if(M3H2MainCheck2.Active)
+			MainButtonControls1.Sensitive = true;
+		else{
+			if((M3H2MainCheck1.Active)||(M3H2MainCheck3.Active)){
+			}
+			else{
+				MainButtonControls1.Sensitive = false;
+			}
+		}
+	}
+
+	protected void Level2Check3Toggled (){
+		if(M3H2MainCheck3.Active)
+			MainButtonControls1.Sensitive = true;
+		else{
+			if((M3H2MainCheck1.Active)||(M3H2MainCheck2.Active)){
+			}
+			else{
+				MainButtonControls1.Sensitive = false;
+			}
+		}
 	}
 
 }

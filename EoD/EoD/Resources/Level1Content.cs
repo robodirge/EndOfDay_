@@ -55,7 +55,8 @@ public partial class MainWindow: Gtk.Window{
 		MainHboxSubContainerM5H2.Visible = true; // Reveal check boxes
 		M5H2MainCheck3.Visible = false;
 		M5H2MainCheck1.Label = "Cross environment checks/smoke tests";
-		M5H2MainCheck2.Label = "Issue Verification & Retest";
+		M5H2MainCheck2.Visible = false;
+		//M5H2MainCheck2.Label = "Issue Verification & Retest";
 
 		radiobutton6.Label = "Yes";
 		radiobutton8.Label = "Yes";
@@ -67,6 +68,7 @@ public partial class MainWindow: Gtk.Window{
 	
 		MainButtonControls1.Sensitive = false;
 
+		label8.Visible = false;
 		MainButtonControls2.Hide();
 		MainButtonControls3.Hide();
 
@@ -346,11 +348,6 @@ public partial class MainWindow: Gtk.Window{
 		}else{
 			buildVersionString = DateTime.Now.ToString("dd/MM/yyyy");
 		}
-
-		Console.WriteLine(clientNameString);
-		Console.WriteLine(projectNameString);
-		Console.WriteLine(urlUsedString);
-		Console.WriteLine(buildVersionString);
 
 		return;
 	}

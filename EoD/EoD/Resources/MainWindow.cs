@@ -10,6 +10,7 @@ public partial class MainWindow: Gtk.Window{
 	public string urlUsedString;
 	public string buildVersionString;
 	public string[] primListArray;
+	public string[] top5ListArray;
 
 	public int addCounter;
 
@@ -66,6 +67,9 @@ public partial class MainWindow: Gtk.Window{
 		case 3:
 			Level3Button();
 			break;
+		case 4:
+			//level4Button
+			break;
 		default:
 			break;
 		}
@@ -90,7 +94,8 @@ public partial class MainWindow: Gtk.Window{
 			Level1Toggled10();
 			break;
 		case 2:
-			Console.WriteLine("asd");
+			break;
+		case 3:
 			break;
 		default:
 			break;
@@ -127,12 +132,74 @@ public partial class MainWindow: Gtk.Window{
 	protected void OnRadiobutton4Toggled (object sender, EventArgs e){
 	}
 
-	//ATM Blank
 	protected void OnRadiobutton2Toggled (object sender, EventArgs e){
+		switch (programControl){
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			Level3Check2Toggled();
+			break;
+		default:
+			break;
+		}
 	}
 
+	//ATM Blank
 	protected void OnMainButtonControls2Clicked(object sender, EventArgs e){
-		CheckSpelling();
+		switch (programControl){
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		default:
+			break;
+		}
+	}
+
+	protected void OnM3H2MainCheck1Toggled(object sender, EventArgs e){
+		switch (programControl){
+		case 1:
+			break;
+		case 2:
+			Level2Check1Toggled();
+			break;
+		case 3:
+			break;
+		default:
+			break;
+		}
+	}
+
+	protected void OnM3H2MainCheck2Toggled(object sender, EventArgs e){
+		switch (programControl){
+		case 1:
+			break;
+		case 2:
+			Level2Check2Toggled();
+			break;
+		case 3:
+			break;
+		default:
+			break;
+		}
+	}
+
+	protected void OnM3H2MainCheck3Toggled(object sender, EventArgs e){
+		switch (programControl){
+		case 1:
+			break;
+		case 2:
+			Level2Check3Toggled();
+			break;
+		case 3:
+			break;
+		default:
+			break;
+		}
 	}
 }
 
