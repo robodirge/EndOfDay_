@@ -69,6 +69,9 @@ public partial class MainWindow: Gtk.Window{
 		 * 
 		 */
 
+
+		programControl = 5;
+		ReportSectionFive();
 	}
 
 	protected void level4Check1Toggled (){

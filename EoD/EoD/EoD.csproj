@@ -83,6 +83,9 @@
     <Compile Include="Resources\Level2Content.cs" />
     <Compile Include="Resources\Level3Content.cs" />
     <Compile Include="Resources\Level4Content.cs" />
+    <Compile Include="Resources\Level5Content.cs" />
+    <Compile Include="Resources\Level5Dialog.cs" />
+    <Compile Include="gtk-gui\EoD.Level5Dialog.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

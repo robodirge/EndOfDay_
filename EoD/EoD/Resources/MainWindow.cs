@@ -68,7 +68,7 @@ public partial class MainWindow: Gtk.Window{
 			Level3Button();
 			break;
 		case 4:
-			//level4Button
+			level4Button();
 			break;
 		default:
 			break;
@@ -154,6 +154,11 @@ public partial class MainWindow: Gtk.Window{
 		case 2:
 			break;
 		case 3:
+			break;
+		case 4:
+			break;
+		case 5:
+			level5ButtonControls2Clicked();
 			break;
 		default:
 			break;

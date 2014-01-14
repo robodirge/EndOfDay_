@@ -15,6 +15,9 @@ public partial class MainWindow: Gtk.Window{
 		// Supply text for title label 
 		MainLabelTitle.Text = "Issue Summary";
 
+		GtkScrolledWindow.Visible = true;
+		GtkScrolledWindow.SetPolicy(PolicyType.Never,PolicyType.Never);
+
 		//MainVboxSubContainerM1.Hide();
 		M1H1MainLabelHeader1.Text = "Issues that have blocked testing?";
 		MainHboxSubContainerM1H1Sub1.Visible = true;

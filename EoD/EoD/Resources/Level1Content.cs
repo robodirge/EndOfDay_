@@ -9,7 +9,7 @@ public partial class MainWindow: Gtk.Window{
 	public void ReportSectionOne(){
 		//myMainClass = new MainWindow(); ///////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 		this.Build();
-
+		GtkScrolledWindow.Visible = false;
 		// Supply text for title label 
 		MainLabelTitle.Text = "Project Details";
 
@@ -69,8 +69,10 @@ public partial class MainWindow: Gtk.Window{
 		MainButtonControls1.Sensitive = false;
 
 		label8.Visible = false;
-		MainButtonControls2.Hide();
-		MainButtonControls3.Hide();
+		MainButtonControls2.Sensitive = false;
+		MainButtonControls3.Sensitive = false;
+		MainButtonControls2.Label = "Spell Check";
+		MainButtonControls3.Label = "Back";
 
 		addCounter = 2;
 		programControl = 1;

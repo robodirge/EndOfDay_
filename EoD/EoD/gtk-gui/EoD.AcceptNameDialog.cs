@@ -12,7 +12,6 @@ namespace EoD
 			global::Stetic.Gui.Initialize (this);
 			// Widget EoD.AcceptNameDialog
 			this.Name = "EoD.AcceptNameDialog";
-			this.Title = global::Mono.Unix.Catalog.GetString ("dialog1");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Internal child EoD.AcceptNameDialog.VBox
 			global::Gtk.VBox w1 = this.VBox;
