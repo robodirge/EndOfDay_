@@ -28,7 +28,7 @@ namespace EoD
 
 		Word._Document doc1;
 
-		public Level5Dialog (ref string sTempText)
+		public Level5Dialog (ref string sTempText)//sTempText)
 		{
 			sToSpellCheck = sTempText;
 
@@ -37,6 +37,25 @@ namespace EoD
 
 			InitSetUp();
 			CheckSpelling();
+		}
+
+		protected void OnDeleteEvent (object sender, DeleteEventArgs a){
+			//if (sToSpellCheck != ""){
+			//	app.Documents.Close(WdSaveOptions.wdDoNotSaveChanges);
+			//	app.Quit();
+			//}
+		}
+
+		public void AppQuit(){
+			if (sToSpellCheck != ""){
+				app.Documents.Close(WdSaveOptions.wdDoNotSaveChanges);
+				app.Quit();
+
+			}
+		}
+
+		public string getText(){
+			return textview1.Buffer.Text;
 		}
 
 		public void InitSetUp(){
@@ -66,26 +85,35 @@ namespace EoD
 
 			app = new Word.Application();
 			app.DisplayAlerts = WdAlertLevel.wdAlertsNone;
+
+			object template = Missing.Value;
+			object newTemplate = Missing.Value;
+			object documentType = Missing.Value;
+			object visible = true;
+			app.Visible = false;
+			doc1 = app.Documents.Add(template, newTemplate, documentType, visible);
 		}
 
 		public void CheckSpelling(){
 			int errors = 0;
+			tsSpellingCorrection.Clear();
+			tsSpellingError.Clear();
 
 			if (sToSpellCheck == ""){
 				Console.WriteLine("no content");
+				button23.Sensitive = false;
 			}
-			else
-			{
-				app.Visible = false;
+			else{
 
-				object template = Missing.Value;
-				object newTemplate = Missing.Value;
-				object documentType = Missing.Value;
-				object visible = true;
+				Word.Range rng;
+				object first = 0;
+				object last = doc1.Characters.Count - 1;
+				rng = doc1.Range(first, last);
+				rng.Select();
+				rng.Text = "";
 
-				doc1 = app.Documents.Add(template, newTemplate, documentType, visible);
 
-				doc1.Words.First.InsertBefore(sToSpellCheck);
+				doc1.Words.First.InsertBefore(textview1.Buffer.Text);
 
 				doc1.Content.LanguageID = WdLanguageID.wdEnglishUK;
 
@@ -94,6 +122,7 @@ namespace EoD
 
 				object optional = Missing.Value;
 
+				button23.Sensitive = true;
 
 				Word.SpellingSuggestions correctionSpelling;
 
@@ -123,28 +152,40 @@ namespace EoD
 			TreeSelection selection = (sender as TreeView).Selection;
 			TreeModel model;
 			TreeIter iter;
+			int ibob = 0;
+			Word.SpellingSuggestions correctionSpelling;
 
 			if(selection.GetSelected(out model, out iter)){
 				//Console.WriteLine("Selected item: " + model.GetValue(iter, 0).ToString() + " - " + model.GetValue(iter, 1).ToString());
 
-				int ibob = Convert.ToInt32(model.GetValue(iter, 1).ToString());
+				ibob = Convert.ToInt32(model.GetValue(iter, 1).ToString());
 
-				Word.SpellingSuggestions correctionSpelling;
 				correctionSpelling = app.GetSpellingSuggestions(spellErrorsColl[ibob].Text);
-
-				for(int x = 1; x <= correctionSpelling.Count; x++){
-					tsSpellingCorrection.AppendValues(correctionSpelling[x].Name);
-				} 
+				//Console.WriteLine(spellErrorsColl[0].Text + " 0");
+				if(correctionSpelling.Count > 1){
+					for(int x = 1; x <= correctionSpelling.Count; x++){
+						tsSpellingCorrection.AppendValues(correctionSpelling[x].Name);
+					} 
+				}else{
+					tsSpellingCorrection.AppendValues("No correction");
+				}
 			}	                       
 		}
 
-		protected void OnButton23Clicked (object sender, EventArgs e){
-			app.Documents.Close(WdSaveOptions.wdDoNotSaveChanges);
-			app.Quit();
-		}
 
 		protected void OnTreeViewCorrection1CursorChanged (object sender, EventArgs e){
-			button8.Sensitive = true;
+			TreeSelection selection = treeViewCorrection1.Selection;
+			TreeModel model;
+			TreeIter iter;
+
+			selection.GetSelected(out model, out iter);
+
+
+			if(model.GetValue(iter, 1).ToString() == "No correction"){ ///Errrrorrrrrr
+				button8.Sensitive = false;
+			}else{
+				button8.Sensitive = true;
+			}
 		}
 
 		protected void OnButton8Clicked (object sender, EventArgs e){
@@ -161,24 +202,34 @@ namespace EoD
 			object last = 0;
 			if(selection1.GetSelected(out model1, out iter1)){
 				ibob = Convert.ToInt32(model1.GetValue(iter1, 1).ToString());
+				Console.WriteLine("Tree one : " + ibob);
 				first = Convert.ToInt32(model1.GetValue(iter1, 2).ToString());
 				last = Convert.ToInt32(model1.GetValue(iter1, 3).ToString());
 			}
 
 			if(selection2.GetSelected(out model2, out iter2)){
 				//Console.WriteLine("Selected item: " + model.GetValue(iter, 0).ToString());
-
-
 				//spellErrorsColl[ibob].Text = model2.GetValue(iter2, 0).ToString();
 
 				//object first = 0;
 				//object last = doc1.Characters.Count - 1;
 				Word.Range rng;
-				rng = doc1.Range(ref first, ref last);
+				rng = doc1.Range(first, last);
 				rng.Select();
 				rng.Text = model2.GetValue(iter2, 0).ToString();
 
-				/*
+				first = 0;
+				last = doc1.Characters.Count - 1;
+				textview1.Buffer.Text = doc1.Range(first, last).Text;
+
+				tsSpellingError.Remove(ref iter1);
+				tsSpellingError.Clear();
+				tsSpellingCorrection.Clear();
+				button8.Sensitive = false;
+
+				sToSpellCheck = textview1.Buffer.Text;
+				CheckSpelling();
+								/*
 				doc1.Range(first, last).Text = "";  ///errrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrorrrrrrrrrrrrrrrrr
 				int ilength = model2.GetValue(iter2, 0).ToString().Length;
 
@@ -192,6 +243,23 @@ namespace EoD
 				textview1.Buffer.Text = doc1.Range(first, last).Text;
 				*/
 			}
+
+		}
+
+		protected void OnButton23Clicked (object sender, EventArgs e){
+			/*
+			if (sToSpellCheck != ""){
+				app.Documents.Close(WdSaveOptions.wdDoNotSaveChanges);
+				app.Quit();
+			}
+			//DeleteEventArgs a = e;
+			OnDeleteEvent(sender, null);
+			*/
+		}
+
+		protected void CheckSpelling (object sender, EventArgs e)
+		{
+			CheckSpelling();
 
 		}
 	}

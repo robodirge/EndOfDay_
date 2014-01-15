@@ -29,10 +29,14 @@ namespace EoD
 		{
 			global::Stetic.Gui.Initialize (this);
 			// Widget EoD.Level5Dialog
-			this.WidthRequest = 515;
+			this.WidthRequest = 510;
 			this.HeightRequest = 500;
 			this.Name = "EoD.Level5Dialog";
+			this.TypeHint = ((global::Gdk.WindowTypeHint)(1));
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+			this.Resizable = false;
+			this.AllowGrow = false;
+			this.DestroyWithParent = true;
 			// Internal child EoD.Level5Dialog.VBox
 			global::Gtk.VBox w1 = this.VBox;
 			w1.Name = "dialog1_VBox";
@@ -54,7 +58,6 @@ namespace EoD
 			this.textview1.WidthRequest = 400;
 			this.textview1.CanFocus = true;
 			this.textview1.Name = "textview1";
-			this.textview1.Editable = false;
 			this.textview1.CursorVisible = false;
 			this.textview1.AcceptsTab = false;
 			this.textview1.WrapMode = ((global::Gtk.WrapMode)(3));
@@ -131,6 +134,7 @@ namespace EoD
 			w13.Position = 2;
 			// Container child vbox2.Gtk.Box+BoxChild
 			this.button7 = new global::Gtk.Button ();
+			this.button7.Sensitive = false;
 			this.button7.CanFocus = true;
 			this.button7.Name = "button7";
 			this.button7.UseUnderline = true;
@@ -169,7 +173,7 @@ namespace EoD
 			this.button10.CanFocus = true;
 			this.button10.Name = "button10";
 			this.button10.UseUnderline = true;
-			this.button10.Label = global::Mono.Unix.Catalog.GetString ("GtkButton");
+			this.button10.Label = global::Mono.Unix.Catalog.GetString ("Check Again");
 			this.vbox2.Add (this.button10);
 			global::Gtk.Box.BoxChild w17 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.button10]));
 			w17.Position = 6;
@@ -198,20 +202,21 @@ namespace EoD
 			this.button23.Name = "button23";
 			this.button23.UseUnderline = true;
 			this.button23.Label = global::Mono.Unix.Catalog.GetString ("Done");
-			this.AddActionWidget (this.button23, 0);
+			this.AddActionWidget (this.button23, -10);
 			global::Gtk.ButtonBox.ButtonBoxChild w22 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w21 [this.button23]));
 			w22.Expand = false;
 			w22.Fill = false;
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 515;
+			this.DefaultWidth = 510;
 			this.DefaultHeight = 500;
 			this.Show ();
+			this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 			this.treeViewError1.CursorChanged += new global::System.EventHandler (this.OnTreeViewError1CursorChanged);
 			this.treeViewCorrection1.CursorChanged += new global::System.EventHandler (this.OnTreeViewCorrection1CursorChanged);
 			this.button8.Clicked += new global::System.EventHandler (this.OnButton8Clicked);
-			this.button23.Clicked += new global::System.EventHandler (this.OnButton23Clicked);
+			this.button10.Clicked += new global::System.EventHandler (this.CheckSpelling);
 		}
 	}
 }

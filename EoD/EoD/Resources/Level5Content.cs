@@ -53,7 +53,17 @@ public partial class MainWindow: Gtk.Window{
 	protected void level5ButtonControls2Clicked (){
 		string sRef = M1MainTextView1.Buffer.Text;
 		EoD.Level5Dialog Nw = new EoD.Level5Dialog(ref sRef);
+
 		//EoD.Level5Dialog Nw = new EoD.Level5Dialog(M2MainTextView1.Buffer.Text);
+		ResponseType response = (ResponseType) Nw.Run();
+		if (response == ResponseType.DeleteEvent){
+			Nw.AppQuit();
+			M1MainTextView1.Buffer.Text = Nw.getText();
+			Nw.Destroy();
+		}
+
+
+
 	}
 
 	protected void level5Button (){
