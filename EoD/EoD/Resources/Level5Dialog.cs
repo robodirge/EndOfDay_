@@ -178,13 +178,14 @@ namespace EoD
 			TreeModel model;
 			TreeIter iter;
 
-			selection.GetSelected(out model, out iter);
+			if(selection.GetSelected(out model, out iter)){
+				string sGetText = model.GetValue(iter, 0).ToString();
+				if(sGetText == "No correction"){
+					button8.Sensitive = false;
+				}else{
+					button8.Sensitive = true;
+				}
 
-
-			if(model.GetValue(iter, 1).ToString() == "No correction"){ ///Errrrorrrrrr
-				button8.Sensitive = false;
-			}else{
-				button8.Sensitive = true;
 			}
 		}
 

@@ -211,6 +211,7 @@ namespace EoD
 			}
 			this.DefaultWidth = 510;
 			this.DefaultHeight = 500;
+			this.button23.Hide ();
 			this.Show ();
 			this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 			this.treeViewError1.CursorChanged += new global::System.EventHandler (this.OnTreeViewError1CursorChanged);

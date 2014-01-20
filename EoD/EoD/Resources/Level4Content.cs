@@ -43,9 +43,6 @@ public partial class MainWindow: Gtk.Window{
 		M5MainEntryField2.Text = "";
 		M5MainEntryField3.Text = "";
 		M5MainEntryField4.Text = "";
-
-
-
 	}
 
 	public void level4Toggled6 (){

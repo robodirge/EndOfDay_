@@ -4,22 +4,21 @@ using System.Text.RegularExpressions;
 using Gtk;
 
 public partial class MainWindow: Gtk.Window{
-
+	#region General
 	//<param> Fill in fields for the first section in the report - Project details </param>
 	public void ReportSectionOne(){
 		//myMainClass = new MainWindow(); ///////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 		this.Build();
 		GtkScrolledWindow.Visible = false;
+		GtkScrolledWindow1.Visible = false;
 		// Supply text for title label 
 		MainLabelTitle.Text = "Project Details";
-
+		label10.Visible = false;
 		// Supply content for Client fields
-		M1H1MainLabelHeader1.Text = "Client:";
-		M1MainEntryField1.Text = "";
+		M1H1MainLabelHeader1.Text = "Client name:";
 
 		// Supply content for Project fields
 		M2H1MainLabelHeader1.Text = "Project name:";
-		M2MainEntryField1.Text = "";
 		
 		// Supply content for tested fields
 		M3H1MainLabelHeader1.Text = "Was a URL used for testing?";	// "URL(s) tested:";
@@ -51,6 +50,10 @@ public partial class MainWindow: Gtk.Window{
 		hbox5.Visible = false;
 		hbox6.Visible = false;
 		hbox7.Visible = false;
+		vbox2.Visible = false;
+
+		hbox9.Visible = false;
+		hbox10.Visible = false;
 		
 		MainHboxSubContainerM5H2.Visible = true; // Reveal check boxes
 		M5H2MainCheck3.Visible = false;
@@ -76,8 +79,11 @@ public partial class MainWindow: Gtk.Window{
 
 		addCounter = 2;
 		programControl = 1;
-		return;
 
+		GtkScrolledWindow2.SetPolicy(PolicyType.Never,PolicyType.Never);
+		GtkScrolledWindow3.SetPolicy(PolicyType.Never,PolicyType.Never);
+	
+		return;
 	}
 
 	public void Level1Toggled6 (){
@@ -145,6 +151,8 @@ public partial class MainWindow: Gtk.Window{
 		return;
 	}
 
+	#endregion
+
 	protected void Level1ButtonControls1Clicked (){
 		//MainWindow myMainClass = new MainWindow();
 		bool clientNameBool = false;
@@ -163,7 +171,7 @@ public partial class MainWindow: Gtk.Window{
 		//Check all 7 primary fields if text not = to ""  // I could link the '+' to the enviro chooser
 		if(radiobutton10.Active){
 			if(M5MainEntryField1.Text == ""){
-				MessageDialog PF = new MessageDialog(this, DialogFlags.Modal, MessageType.Warning, ButtonsType.Ok, ("First primary environment is missing!"));
+				MessageDialog PF = new MessageDialog(this, DialogFlags.Modal, MessageType.Warning, ButtonsType.Ok, ("Primary environment 1: Text is missing. Please supply an environment and click 'Next'."));
 				PF.Title= "Missing input";
 				ResponseType response = (ResponseType) PF.Run();
 				if (response == ResponseType.Ok || response == ResponseType.DeleteEvent){
@@ -228,7 +236,6 @@ public partial class MainWindow: Gtk.Window{
 	}
 
 	protected void Level1Check1Toggled (){
-		//MainWindow myMainClass = new MainWindow();
 		if(M5H2MainCheck1.Active)
 			MainButtonControls1.Sensitive = true;
 		else{
@@ -241,7 +248,6 @@ public partial class MainWindow: Gtk.Window{
 	}
 
 	protected void Level1Check2Toggled (){
-		//MainWindow myMainClass = new MainWindow();
 		if(M5H2MainCheck2.Active)
 			MainButtonControls1.Sensitive = true;
 		else{
@@ -292,48 +298,67 @@ public partial class MainWindow: Gtk.Window{
 		}
 	}
 
-	protected void SetLevel1Options(){
+	protected void SetLevel1Options(){  ///Needs testing!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		int[] tempContainer = new int[7];
+		int iCount = 0;
+
 		//Check all 7 primary fields if text not = to ""  // I could link the '+' to the enviro chooser
 		if(radiobutton10.Active){
 			int iTempCount = 1; // Has to be 1 as field1 cant be ""
-			if((hbox2.Visible) && (M5MainEntryField2.Text != ""))
+			tempContainer[iCount] = 1; iCount++;
+			if((hbox2.Visible) && (M5MainEntryField2.Text != "")){
 				iTempCount++;
-			if((hbox3.Visible) && (M5MainEntryField3.Text != ""))
+				tempContainer[iCount] = 2; iCount++;
+			}
+			if((hbox3.Visible) && (M5MainEntryField3.Text != "")){
 				iTempCount++;
-			if((hbox4.Visible) && (M5MainEntryField4.Text != ""))
+				tempContainer[iCount] = 3; iCount++;
+			}
+			if((hbox4.Visible) && (M5MainEntryField4.Text != "")){
 				iTempCount++;
-			if((hbox5.Visible) && (M5MainEntryField5.Text != ""))
+				tempContainer[iCount] = 4; iCount++;
+			}
+			if((hbox5.Visible) && (M5MainEntryField5.Text != "")){
 				iTempCount++;
-			if((hbox6.Visible) && (M5MainEntryField6.Text != ""))
+				tempContainer[iCount] = 5; iCount++;
+			}
+			if((hbox6.Visible) && (M5MainEntryField6.Text != "")){
 				iTempCount++;
-			if((hbox7.Visible) && (M5MainEntryField7.Text != ""))
+				tempContainer[iCount] = 6; iCount++;
+			}
+			if((hbox7.Visible) && (M5MainEntryField7.Text != "")){
 				iTempCount++;
+				tempContainer[iCount] = 7; iCount++;
+			}
 
 			primListArray = new string[iTempCount];
 			//value is - apply to an array which is global!
 
 			for(int x =0; x < primListArray.Length; x++){
-				switch(x){
-				case 0:
-					primListArray[0] = M5MainEntryField1.Text;
-					break;
+				switch(tempContainer[x]){
 				case 1:
-					primListArray[1] = M5MainEntryField2.Text;
+					primListArray[x] = M5MainEntryField1.Text;
 					break;
 				case 2:
-					primListArray[2] = M5MainEntryField3.Text;
+					primListArray[x] = M5MainEntryField2.Text;
 					break;
 				case 3:
-					primListArray[3] = M5MainEntryField4.Text;
+					primListArray[x] = M5MainEntryField3.Text;
 					break;
 				case 4:
-					primListArray[4] = M5MainEntryField5.Text;
+					primListArray[x] = M5MainEntryField4.Text;
 					break;
 				case 5:
-					primListArray[5] = M5MainEntryField6.Text;
+					primListArray[x] = M5MainEntryField5.Text;
 					break;
-				case 6: 
-					primListArray[6] = M5MainEntryField7.Text;
+				case 6:
+					primListArray[x] = M5MainEntryField6.Text;
+					break;
+				case 7: 
+					primListArray[x] = M5MainEntryField7.Text;
+					break;
+				default:
+					Console.WriteLine("Null");
 					break;
 				}
 			}
@@ -349,6 +374,12 @@ public partial class MainWindow: Gtk.Window{
 			buildVersionString = M4MainTextView1.Buffer.Text;
 		}else{
 			buildVersionString = DateTime.Now.ToString("dd/MM/yyyy");
+		}
+
+		if(M5H2MainCheck1.Active){
+			bSmokes = true;
+		}else{
+			bSmokes = false;
 		}
 
 		return;
